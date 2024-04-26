@@ -1,3 +1,4 @@
+import FrameNormal from "@/components/Frames/Normal";
 import WebcamViewer from "@/components/WebcamViewer";
 import Image from "next/image";
 
@@ -9,15 +10,15 @@ export default function Home() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "pink",
+        backgroundColor: "#e2e1e0",
         width: "100vw",
         height: "100vh",
       }}
     >
       <h1>카메라</h1>
-      <div>
+      <FrameNormal>
         <WebcamViewer />
-      </div>
+      </FrameNormal>
     </main>
   );
 }

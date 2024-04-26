@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Cam from "../Cam";
+import FrameNormal from "../Frames/Normal";
 
 const WebcamViewer = () => {
   const [playing, setPlaying] = useState<boolean>(false);
@@ -44,19 +46,23 @@ const WebcamViewer = () => {
         gap: "16px",
       }}
     >
-      <video
+      <div
         style={{
-          marginTop: "16px",
-          border: "1px solid #333333",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "1000px",
+          height: "800px",
+          boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
+          backgroundColor: "#fff",
+          borderRadius: "32px",
         }}
-        width="640"
-        height="480"
-        autoPlay
-        playsInline
-        muted
-        id="player"
-        ref={webcamRef}
-      />
+      >
+        <FrameNormal>
+          <Cam camRef={webcamRef} />
+        </FrameNormal>
+      </div>
+
       <button
         style={{
           width: "50%",
