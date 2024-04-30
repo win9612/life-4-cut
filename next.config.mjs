@@ -7,7 +7,6 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
-  distDir: "/build",
   typescript: {
     ignoreBuildErrors: true,
   },
