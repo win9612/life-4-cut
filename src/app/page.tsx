@@ -12,15 +12,21 @@ export default function Home() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#e2e1e0",
+        backgroundColor: "#fff",
         width: "100vw",
         height: "100vh",
       }}
     >
-      <h1>카메라</h1>
-      <FrameNormal>
+      <h1
+        style={{
+          marginBottom: "16px",
+        }}
+      >
+        카메라
+      </h1>
+      <div>
         <WebcamViewer />
-      </FrameNormal>
+      </div>
     </main>
   );
 }

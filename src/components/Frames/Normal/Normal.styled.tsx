@@ -4,4 +4,5 @@ import { FrameBase } from "../Frames.styled";
 export const Wrap = styled(FrameBase)`
   border-radius: 16px;
   border: 0;
+  background-color: #f3f3f3;
 `;

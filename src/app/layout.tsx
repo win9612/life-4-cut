@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+import StyledComponentsRegistry from "@/lib/registry";
 
-// const inter = Inter({ subsets: ["latin"] });
+const font = Noto_Sans_KR({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "누군가의 꿈",
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body className={font.className}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }
