@@ -2,7 +2,7 @@ import FrameNormal from "@/components/Frames/Normal";
 import WebcamViewer from "@/components/WebcamViewer";
 
 /**
- * 홈페이지1
+ * 홈페이지
  */
 export default function Home() {
   return (
