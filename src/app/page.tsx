@@ -6,15 +6,15 @@ import WebcamViewer from "@/components/WebcamViewer";
  */
 export default function Home() {
   return (
-    <main
+    <div
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#fff",
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
       }}
     >
       <h1
@@ -24,9 +24,7 @@ export default function Home() {
       >
         카메라
       </h1>
-      <div>
-        <WebcamViewer />
-      </div>
-    </main>
+      <WebcamViewer />
+    </div>
   );
 }
