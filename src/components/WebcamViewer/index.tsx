@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Cam from "../Cam";
 import FrameNormal from "../Frames/Normal";
 import BasicButton from "../Buttons/BasicButton";
+import { Wrap, WrapCamArea } from "./WebcamViewer.styled";
+import Image from "next/image";
 
 const WebcamViewer = () => {
   const [playing, setPlaying] = useState<boolean>(false);
@@ -41,34 +43,31 @@ const WebcamViewer = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "16px",
-        width: "100%",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          paddingBottom: "75%",
-          boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
-          backgroundColor: "#fff",
-          borderRadius: "32px",
-        }}
-      >
+    <Wrap>
+      {/* 카메라 */}
+      <WrapCamArea>
         <FrameNormal>
+          {playing && (
+            <Image
+              src="/png/hanwha_logo.png"
+              alt=""
+              width={64}
+              height={64}
+              style={{
+                position: "absolute",
+                top: "16px",
+                left: "16px",
+              }}
+            />
+          )}
           <Cam camRef={webcamRef} />
         </FrameNormal>
-      </div>
-
-      <BasicButton onClick={playing ? endStream : startStream}>{playing ? "종료하기" : "연결하기"}</BasicButton>
-    </div>
+      </WrapCamArea>
+      {/* 버튼 */}
+      <BasicButton buttonType={playing ? "cancel" : "normal"} onClick={playing ? endStream : startStream}>
+        {playing ? "종료하기" : "연결하기"}
+      </BasicButton>
+    </Wrap>
   );
 };
 

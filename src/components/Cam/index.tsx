@@ -1,4 +1,5 @@
 import React from "react";
+import { WrapCam } from "./Cam.styled";
 
 type Props = {
   camRef: any;
@@ -6,13 +7,7 @@ type Props = {
 
 const Cam = ({ camRef }: Props) => {
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        paddingBottom: "75%",
-      }}
-    >
+    <WrapCam>
       <video
         autoPlay
         playsInline
@@ -27,7 +22,7 @@ const Cam = ({ camRef }: Props) => {
           height: "100%",
         }}
       />
-    </div>
+    </WrapCam>
   );
 };
 
