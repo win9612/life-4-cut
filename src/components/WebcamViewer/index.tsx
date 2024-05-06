@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Cam from "../Cam";
 import FrameNormal from "../Frames/Normal";
-import BasicButton from "../Buttons/BasicButton";
+import BasicButton from "../common/Buttons/BasicButton";
 import { Wrap, WrapCamArea } from "./WebcamViewer.styled";
 import Image from "next/image";
 
@@ -23,10 +23,10 @@ const WebcamViewer = () => {
       .getUserMedia({
         video: true,
       })
-      .then((stream) => {
+      .then((stream: MediaStream) => {
         player.srcObject = stream;
       })
-      .catch((e) => {
+      .catch((e: any) => {
         setPlaying(false);
         console.log("[Log] 웹캠 연결에 실패했습니다.");
         console.error(e);
