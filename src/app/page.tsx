@@ -16,6 +16,6 @@ export default function Home() {
         카메라
       </h1>
       <WebcamViewer />
-    </div>
+    </WrapHome>
   );
 }
