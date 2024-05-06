@@ -1,3 +1,5 @@
+"use client";
+
 import FrameNormal from "@/components/Frames/Normal";
 import WebcamViewer from "@/components/WebcamViewer";
 import { WrapHome } from "./MainPage.styled";
