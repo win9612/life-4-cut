@@ -6,6 +6,9 @@ import { APP_VERSION } from "@/constants";
  * 홈페이지
  */
 export default function Home() {
+  /**
+   * show version
+   */
   console.log(APP_VERSION);
 
   return (
